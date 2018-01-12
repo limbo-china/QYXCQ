@@ -11,7 +11,7 @@ Card::Color Card::getColor(){ return m_color; }
 Card::Type Card::getType(){ return m_type; }
 int Card::getPoints(){ return m_points; }
 
-SkillCard::SkillCard(Skill s) : m_skill(s)
+SkillCard::SkillCard(Skill s, Suit sui, Color c, int p) : Card(sui, c, Type::Skill, p), m_skill(s)
 {
 }
 

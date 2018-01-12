@@ -3,8 +3,11 @@
 #include "QtHeader.h"
 
 class Card : public QObject{
-	Q_OBJECT
 
+	Q_OBJECT
+	Q_ENUMS(Suit)
+	Q_ENUMS(Color)
+	Q_ENUMS(Type)
 
 public:
 
@@ -40,12 +43,15 @@ private:
 
 class SkillCard : public Card{
 
+	Q_OBJECT
+	Q_ENUMS(SKill)
+
 public:
 	enum Skill{
 		Juedou, Shoupenglei, Wuxie, Huadi, Jiedao, Wugu, Wuzhong, Xiuyang, Fenghuo, Wanjian, Tannang, Fudi
 	};
 
-	SkillCard(Skill s);
+	SkillCard(Skill s, Suit sui, Color c, int p);
 
 	//void setSkill(Skill s);
 	Skill getSkill();
@@ -57,6 +63,9 @@ private:
 };
 
 class BasicCard : public Card{
+
+	Q_OBJECT
+	Q_ENUMS(Basic)
 
 public:
 
@@ -75,6 +84,9 @@ private:
 };
 
 class EquipCard : public Card{
+
+	Q_OBJECT
+	Q_ENUMS(Equip)
 
 public:
 
