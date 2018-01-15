@@ -13,12 +13,14 @@ class Package : public QObject{
 public:
 
 	enum Type{
-		General, Cardtype /*not named 'Card' to aviod conflicting with class 'Card' */
+		general, cardtype /*not named 'Card' to aviod conflicting with class 'Card' */
 	};
 
 	Package();
 
 	Package(Type t){ m_type = t; }
+
+	virtual int getAllCount() =0 ;
 
 private:
 
@@ -35,6 +37,9 @@ public:
 	CardPackage();
 	QList<Card *> cards;
 
+	int getAllCount();
+	Card* getCardByN(int n);
+
 };
 
 class GeneralPackage :public Package{
@@ -45,5 +50,7 @@ public:
 	GeneralPackage();
 
 };
+
+
 
 #endif

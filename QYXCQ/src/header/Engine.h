@@ -1,6 +1,7 @@
 #ifndef ENGINE_H
 #define ENGINE_H
 
+#include "Package.h"
 #include "QtHeader.h"
 
 class Engine : public QObject
@@ -10,6 +11,13 @@ class Engine : public QObject
 public:
 	Engine();
 	~Engine();
+
+	CardPackage* getCardPack();
+
+private:
+
+	
+	CardPackage *cardpack;
 
 };
 

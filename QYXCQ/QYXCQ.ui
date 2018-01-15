@@ -27,6 +27,19 @@
      <string>Start1</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="cardViewButton">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>220</y>
+      <width>151</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>cardoverview</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">

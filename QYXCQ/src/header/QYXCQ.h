@@ -4,6 +4,7 @@
 #include "QtHeader.h"
 #include "ui_QYXCQ.h"
 #include "startDialog.h"
+#include "cardOverViewDialog.h"
 
 class QYXCQ : public QMainWindow
 {
@@ -16,6 +17,7 @@ public:
 private:
 	Ui::QYXCQClass ui;
 	StartDialog* startDialog;
+	CardOverViewDialog* cardOverViewDialog;
 private slots:
 	
 };

@@ -28,6 +28,7 @@ class Ui_QYXCQClass
 public:
     QWidget *centralWidget;
     QPushButton *startButton;
+    QPushButton *cardViewButton;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -42,6 +43,9 @@ public:
         startButton = new QPushButton(centralWidget);
         startButton->setObjectName(QStringLiteral("startButton"));
         startButton->setGeometry(QRect(260, 140, 93, 28));
+        cardViewButton = new QPushButton(centralWidget);
+        cardViewButton->setObjectName(QStringLiteral("cardViewButton"));
+        cardViewButton->setGeometry(QRect(260, 220, 151, 28));
         QYXCQClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(QYXCQClass);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -63,6 +67,7 @@ public:
     {
         QYXCQClass->setWindowTitle(QApplication::translate("QYXCQClass", "QYXCQ", 0));
         startButton->setText(QApplication::translate("QYXCQClass", "Start1", 0));
+        cardViewButton->setText(QApplication::translate("QYXCQClass", "cardoverview", 0));
     } // retranslateUi
 
 };

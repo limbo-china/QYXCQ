@@ -2,104 +2,114 @@
 #define CARD_H
 #include "QtHeader.h"
 
+//static QList<QString> cards;
+//static QList<QString> suits;
+
 class Card : public QObject{
 
 	Q_OBJECT
-	Q_ENUMS(Suit)
-	Q_ENUMS(Color)
-	Q_ENUMS(Type)
 
 public:
 
-	enum Suit{
-		Spade, Club, Heart, Diamond
-	};
+	/*enum Suit{
+		spade, club, heart, diamond
+	};*/
 
-	enum Color{
+	/*enum Color{
 		Red, Black
-	};
-	enum Type{
-		Basic, Skill, Equip
-	};
+	};*/
+	/*enum Type{
+		basic, skill, equip
+	};*/
 
 	Card();
-	Card(Suit s, Color c, Type t, int p);
+	Card(QString suit, QString type, int p);
 	//void setSuit(Suit s);
 	//void setColor(Color c);
 	//void setType(Type t);
-	Suit getSuit();
-	Color getColor();
-	Type getType();
+	QString getSuit();
+	QString getType();
 	int getPoints();
 
 private:
 
-	Suit m_suit;
-	Color m_color;
-	Type  m_type;
+	QString m_suit;
+	QString  m_type;
 	int m_points;
 };
 
+//class CardInfo: public QObject{
+//
+//	Q_OBJECT
+//public:
+//
+//	static void init();
+//	static QString getNameByCard(Card* c);
+//	static int getTypeByCard(Card* c);
+//	static int getTypeByName(QString s);
+//	//int getCardNumber(Card* c);
+//	static QList<QString> cards;
+//	static QList<QString> suits;
+//};
 
 class SkillCard : public Card{
 
 	Q_OBJECT
-	Q_ENUMS(SKill)
 
 public:
-	enum Skill{
-		Juedou, Shoupenglei, Wuxie, Huadi, Jiedao, Wugu, Wuzhong, Xiuyang, Fenghuo, Wanjian, Tannang, Fudi
-	};
+	/*enum Skill{
+		juedou, shoupenglei, wuxie, huadi, jiedao, wugu, wuzhong, xiuyang, fenghuo, wanjian, tannang, fudi
+	};*/
 
-	SkillCard(Skill s, Suit sui, Color c, int p);
+	SkillCard(QString skill, QString sui, int p);
 
 	//void setSkill(Skill s);
-	Skill getSkill();
+	QString getSkill();
 
 private:
 
-	Skill m_skill;
+	QString m_skill;
 
 };
 
 class BasicCard : public Card{
 
 	Q_OBJECT
-	Q_ENUMS(Basic)
 
 public:
 
-	enum Basic{
-		blow, parry, supplement
-	};
-	BasicCard(Basic b);
+	/*enum Basic{
+		slash, parry, supplement
+	};*/
+	BasicCard(QString b, QString suit, int p);
 
 	//void setBasic(Basic b);
-	Basic getBasic();
+	QString getBasic();
 
 private:
 
-	Basic m_basic;
+	QString m_basic;
 
 };
 
 class EquipCard : public Card{
 
 	Q_OBJECT
-	Q_ENUMS(Equip)
 
 public:
 
-	enum Equip{
+	/*enum Equip{
 		jingong, fangyu, yuchangjian, bolangchui, bawanggong, yuruyu, langyabang, panlonggun, luyeqiang, hufu, longlindao
-	};
-	EquipCard(Equip e);
+	};*/
+	EquipCard(QString e, QString suit, int p);
 
 	//void setEquip(Equip e);
-	Equip getEquip();
+	QString getEquip();
 
 private:
 
-	Equip m_equip;
+	QString m_equip;
 };
+
+
 #endif
