@@ -2,13 +2,24 @@
 
 Card::Card(){}
 Card::Card(QString suit, QString type, int p)
-: m_suit(suit), m_type(type), m_points(p)
+: m_suit(suit), m_type(type), m_point(p)
 {
 }
 
 QString Card::getSuit(){ return m_suit; }
 QString Card::getType(){ return m_type; }
-int Card::getPoints(){ return m_points; }
+int Card::getPoint(){ return m_point; }
+
+QString Card::getName(){
+	if (m_type == "basic")
+		return static_cast<BasicCard*>(this)->getBasic();
+	else if (m_type == "skill")
+		return static_cast<SkillCard*>(this)->getSkill();
+	else if (m_type == "equip")
+		return static_cast<EquipCard*>(this)->getEquip();
+	else
+		return "";
+}
 
 //void CardInfo::init(){
 //

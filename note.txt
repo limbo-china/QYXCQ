@@ -1,0 +1,4 @@
+2018-01-16
+
+<GameCore::generatePlayerBoard>
+在QMainWindow动态创建widget，若使centralwidget成为其父widget，会出现各种奇怪问题。widget可能不显示。

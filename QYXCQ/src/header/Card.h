@@ -29,13 +29,14 @@ public:
 	//void setType(Type t);
 	QString getSuit();
 	QString getType();
-	int getPoints();
+	QString getName();
+	int getPoint();
 
 private:
 
 	QString m_suit;
 	QString  m_type;
-	int m_points;
+	int m_point;
 };
 
 //class CardInfo: public QObject{

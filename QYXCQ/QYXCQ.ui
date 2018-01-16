@@ -6,58 +6,23 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>825</width>
+    <width>824</width>
     <height>733</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>QYXCQ</string>
   </property>
-  <widget class="QWidget" name="centralWidget">
-   <widget class="QPushButton" name="startButton">
-    <property name="geometry">
-     <rect>
-      <x>260</x>
-      <y>140</y>
-      <width>93</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Start1</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="cardViewButton">
-    <property name="geometry">
-     <rect>
-      <x>260</x>
-      <y>220</y>
-      <width>151</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>cardoverview</string>
-    </property>
-   </widget>
-  </widget>
+  <widget class="QWidget" name="centralWidget"/>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>825</width>
+     <width>824</width>
      <height>26</height>
     </rect>
    </property>
-  </widget>
-  <widget class="QToolBar" name="mainToolBar">
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
  </widget>

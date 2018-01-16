@@ -14,12 +14,25 @@ public:
 	QYXCQ(QWidget *parent = Q_NULLPTR);
 	~QYXCQ();
 
+	Ui::QYXCQClass getUi(){ return ui; }
+
 private:
 	Ui::QYXCQClass ui;
 	StartDialog* startDialog;
 	CardOverViewDialog* cardOverViewDialog;
+
+	QToolBar* gameToolbar;
+
+	QMenu* gameMenu;
+	QAction* startAction;
+
+	QMenu* helpMenu;
+	QAction* cardOverViewAction;
 private slots:
 	
+void on_startAction_triggered();
+void on_cardOverViewAction_triggered();
+
 };
 
 extern QYXCQ* QYXCQWindow;

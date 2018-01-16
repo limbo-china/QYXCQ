@@ -3,6 +3,7 @@
 
 #include "Package.h"
 #include "QtHeader.h"
+#include "gamecore.h"
 
 class Engine : public QObject
 {
@@ -16,8 +17,12 @@ public:
 
 private:
 
-	
 	CardPackage *cardpack;
+	GameCore* gamecore;
+
+private slots:
+	
+	void startGameCore(QString character);
 
 };
 

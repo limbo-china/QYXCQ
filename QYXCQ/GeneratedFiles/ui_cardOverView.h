@@ -30,12 +30,12 @@ public:
             cardOverViewDialog->setObjectName(QStringLiteral("cardOverViewDialog"));
         cardOverViewDialog->resize(788, 641);
         tableWidget = new QTableWidget(cardOverViewDialog);
-        if (tableWidget->columnCount() < 5)
-            tableWidget->setColumnCount(5);
+        if (tableWidget->columnCount() < 4)
+            tableWidget->setColumnCount(4);
         tableWidget->setObjectName(QStringLiteral("tableWidget"));
         tableWidget->setGeometry(QRect(50, 60, 611, 501));
         tableWidget->setShowGrid(true);
-        tableWidget->setColumnCount(5);
+        tableWidget->setColumnCount(4);
 
         retranslateUi(cardOverViewDialog);
 
