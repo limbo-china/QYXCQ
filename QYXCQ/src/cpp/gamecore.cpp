@@ -1,5 +1,7 @@
 #include "gamecore.h"
 #include "QYXCQ.h"
+#include <iostream>
+using namespace std;
 
 
 GameCore::GameCore(int players){
@@ -7,7 +9,7 @@ GameCore::GameCore(int players){
 	CardPackage* cardpackage = new CardPackage();
 
 	foreach(Card* c, cardpackage->cards)
-		remaincards << c;
+		discardedcards << c;
 
 	playernum = players;
 
@@ -20,10 +22,60 @@ void GameCore::startGame(QString character){
 		players << player;
 	}
 
-	//dealCards();
-	generatePlayerBoard(&players);
-}
+	boardInit(players);
 
+	shuffleCards();
+	dealCards();
+	//generatePlayerBoard(&players);  //没调好，先静态生成
+
+}
+void GameCore::shuffleCards(){
+
+	shuffleDiscarded(discardedcards);
+	//cout << discardedcards.length();
+	while (!discardedcards.isEmpty()){
+		remaincards << discardedcards.first();
+		discardedcards.pop_front();
+	}
+	
+}
+void GameCore::dealCards(){
+	
+	for (int i = 0; i < playernum; i++)
+		for (int j = 0; j < 5; j++)
+			players[i]->getOneCard(getTopCardFromRemain());
+
+}
+void GameCore::boardInit(QList<Player* >& players){
+
+	Player* player = players[0];
+
+	player->okbutton = QYXCQWindow->getUi().player1OkButton;
+	player->cancelbutton = QYXCQWindow->getUi().player1CancelButton;
+	player->bloodlabel = QYXCQWindow->getUi().player1BloodLabel;
+	player->cardnumlabel = QYXCQWindow->getUi().player1CardLabel;
+	player->m_cardcontainer = QYXCQWindow->getUi().player1CardContainer;
+
+	player->okbutton->setText(tr("OK"));
+	player->cancelbutton->setText(tr("Cancel"));
+	player->bloodlabel->setText(QString::number(player->getBlood()));
+	player->cardnumlabel->setText(QString::number(player->getCardsNum()));
+
+	Player* player2 = players[1];
+
+	player2->okbutton = QYXCQWindow->getUi().player2OkButton;
+	player2->cancelbutton = QYXCQWindow->getUi().player2CancelButton;
+	player2->bloodlabel = QYXCQWindow->getUi().player2BloodLabel;
+	player2->cardnumlabel = QYXCQWindow->getUi().player2CardLabel;
+	player2->m_cardcontainer = QYXCQWindow->getUi().player2CardContainer;
+
+	player2->okbutton->setText(tr("OK"));
+	player2->cancelbutton->setText(tr("Cancel"));
+	player2->bloodlabel->setText(QString::number(player2->getBlood()));
+	player2->cardnumlabel->setText(QString::number(player2->getCardsNum()));
+
+	QYXCQWindow->getUi().playBoard->setVisible(true);
+}
 void GameCore::generatePlayerBoard(QList<Player* >* players){
 
 	
@@ -87,4 +139,24 @@ void GameCore::generatePlayerBoard(QList<Player* >* players){
 
 	g_w->setLayout(g_verticalLayout);
 
+}
+
+Card* GameCore::getTopCardFromRemain(){
+	
+	if (remaincards.isEmpty())
+		shuffleCards();
+	Card* c = remaincards.first();
+	discardedcards << c;
+	remaincards.pop_front();
+
+	return c;
+}
+void GameCore::shuffleDiscarded(QList<Card* >& discarded){
+
+	qsrand(QTime(0, 0, 0).secsTo(QTime::currentTime()));
+
+	for (int i = 0; i < discarded.length(); i++){
+		int j = qrand() % discarded.length();
+		discarded.swap(i, j);
+	}
 }

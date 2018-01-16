@@ -21,6 +21,7 @@ public:
 	QLabel* cardnumlabel;
 	int getBlood(){ return m_blood; }
 	int getCardsNum() { return m_cards.length(); }
+	void getOneCard(Card*);
 
 private:
 

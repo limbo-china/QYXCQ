@@ -11,11 +11,11 @@ QString Card::getType(){ return m_type; }
 int Card::getPoint(){ return m_point; }
 
 QString Card::getName(){
-	if (m_type == "basic")
+	if (m_type == tr("basic"))
 		return static_cast<BasicCard*>(this)->getBasic();
-	else if (m_type == "skill")
+	else if (m_type == tr("skill"))
 		return static_cast<SkillCard*>(this)->getSkill();
-	else if (m_type == "equip")
+	else if (m_type == tr("equip"))
 		return static_cast<EquipCard*>(this)->getEquip();
 	else
 		return "";

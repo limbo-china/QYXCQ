@@ -7,6 +7,7 @@ QYXCQ::QYXCQ(QWidget *parent)
 	: QMainWindow(parent)
 {
 	ui.setupUi(this);
+	ui.playBoard->setVisible(false);
 	
 	startAction = new QAction(tr("Start"),this);
 	//startAction->setShortcut(tr("Ctrl+S"));
