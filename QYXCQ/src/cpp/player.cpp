@@ -5,7 +5,7 @@
 
 Player::Player(int n): m_blood(4){
 
-	if (n == 1){
+	/*if (n == 1){
 		okbutton = QYXCQWindow->getUi().player1OkButton;
 		cancelbutton = QYXCQWindow->getUi().player1CancelButton;
 		bloodlabel = QYXCQWindow->getUi().player1BloodLabel;
@@ -22,7 +22,7 @@ Player::Player(int n): m_blood(4){
 
 	}
 	connect(okbutton, SIGNAL(clicked()), this, SLOT(on_okbutton_clicked()));
-	connect(m_cardcontainer, SIGNAL(itemSelectionChanged()), this, SLOT(itemSelectChange()));
+	connect(m_cardcontainer, SIGNAL(itemSelectionChanged()), this, SLOT(itemSelectChange()));*/
 
 };
 void Player::getOneCard(Card* c){

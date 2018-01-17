@@ -119,6 +119,9 @@ CardPackage::CardPackage() : Package(cardtype){
 		<< new EquipCard(tr("luyeqiang"), tr("club"), tr("12"))
 		<< new EquipCard(tr("longlindao"), tr("club"), tr("2"));
 
+		for (int i = 0; i < cards.length(); i++)
+			cards[i]->setNumber(i);
+
 }
 
 int CardPackage::getAllCount(){

@@ -14,8 +14,8 @@ Engine::~Engine()
 }
 void Engine::updateRemainDiscard(){
 
-	QYXCQWindow->getUi().remainNumLabel->setText(QString::number(gamecore->remaincards.length()));
-	QYXCQWindow->getUi().discardNumLabel->setText(QString::number(gamecore->discardedcards.length()));
+	/*QYXCQWindow->getUi().remainNumLabel->setText(QString::number(gamecore->remaincards.length()));
+	QYXCQWindow->getUi().discardNumLabel->setText(QString::number(gamecore->discardedcards.length()));*/
 }
 void Engine::startGameCore(QString character){
 

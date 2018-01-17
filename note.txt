@@ -10,3 +10,6 @@ vs qt调试时，选择release版本，debug版本调试可能出现各种问题
 <Card::getName()>
 在代码里添加待翻译的字符串后，要在项目里更新.ts文件生成新qm文件，否则可能找不到类，无法正确翻译。
 QCoreApplicaiton::translator()  和 tr()对此项目而言，效果是一样的，都能使用。
+
+<QYXCQ::QYXCQ>
+控件隐式的链接signal和slot，若显性手动连接时也按照隐性的格式写slot，则会报no match错误。

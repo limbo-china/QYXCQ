@@ -569,16 +569,12 @@
 <context>
     <name>GameCore</name>
     <message>
-        <location filename="src/cpp/gamecore.cpp" line="59"/>
-        <location filename="src/cpp/gamecore.cpp" line="72"/>
         <location filename="src/cpp/gamecore.cpp" line="105"/>
         <location filename="src/cpp/gamecore.cpp" line="131"/>
         <source>OK</source>
         <translation>确定</translation>
     </message>
     <message>
-        <location filename="src/cpp/gamecore.cpp" line="60"/>
-        <location filename="src/cpp/gamecore.cpp" line="73"/>
         <location filename="src/cpp/gamecore.cpp" line="106"/>
         <location filename="src/cpp/gamecore.cpp" line="132"/>
         <source>Cancel</source>
@@ -588,17 +584,17 @@
 <context>
     <name>Player</name>
     <message>
-        <location filename="src/cpp/player.cpp" line="22"/>
+        <location filename="src/cpp/player.cpp" line="41"/>
         <source>spade</source>
         <translation>黑桃</translation>
     </message>
     <message>
-        <location filename="src/cpp/player.cpp" line="24"/>
+        <location filename="src/cpp/player.cpp" line="43"/>
         <source>heart</source>
         <translation>红心</translation>
     </message>
     <message>
-        <location filename="src/cpp/player.cpp" line="26"/>
+        <location filename="src/cpp/player.cpp" line="45"/>
         <source>club</source>
         <translation>梅花</translation>
     </message>
@@ -615,21 +611,28 @@
     <name>QYXCQ</name>
     <message>
         <location filename="src/cpp/QYXCQ.cpp" line="12"/>
+        <source>yingxiongchuanqi</source>
+        <translation>英雄传奇</translation>
+    </message>
+    <message>
+        <location filename="src/cpp/QYXCQ.cpp" line="16"/>
         <source>Start</source>
         <translation>开始</translation>
     </message>
     <message>
         <location filename="src/cpp/QYXCQ.cpp" line="18"/>
+        <location filename="src/cpp/QYXCQ.cpp" line="20"/>
         <source>Game</source>
         <translation>游戏</translation>
     </message>
     <message>
-        <location filename="src/cpp/QYXCQ.cpp" line="22"/>
+        <location filename="src/cpp/QYXCQ.cpp" line="24"/>
         <source>Card OverView</source>
         <translation>查看牌组</translation>
     </message>
     <message>
         <location filename="src/cpp/QYXCQ.cpp" line="26"/>
+        <location filename="src/cpp/QYXCQ.cpp" line="28"/>
         <source>Help</source>
         <translation>帮助</translation>
     </message>

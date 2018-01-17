@@ -26,7 +26,7 @@ void GameCore::startGame(QString character){
 		players << player;
 	}
 
-	boardInit(players);
+	//boardInit(players);
 
 	shuffleCards();
 	dealCards();
@@ -50,32 +50,32 @@ void GameCore::dealCards(){
 			players[i]->getOneCard(getTopCardFromRemain());
 
 }
-void GameCore::boardInit(QList<Player* >& players){
-
-	Player* player = players[0];
-
-	player->okbutton->setText(tr("OK"));
-	player->okbutton->setEnabled(false);
-	player->cancelbutton->setText(tr("Cancel"));
-	player->bloodlabel->setText(QString::number(player->getBlood()));
-	player->cardnumlabel->setText(QString::number(player->getCardsNum()));
-
-	Player* player2 = players[1];
-
-	player2->okbutton = QYXCQWindow->getUi().player2OkButton;
-	player2->cancelbutton = QYXCQWindow->getUi().player2CancelButton;
-	player2->bloodlabel = QYXCQWindow->getUi().player2BloodLabel;
-	player2->cardnumlabel = QYXCQWindow->getUi().player2CardLabel;
-	player2->m_cardcontainer = QYXCQWindow->getUi().player2CardContainer;
-
-	player2->okbutton->setText(tr("OK"));
-	player2->okbutton->setEnabled(false);
-	player2->cancelbutton->setText(tr("Cancel"));
-	player2->bloodlabel->setText(QString::number(player2->getBlood()));
-	player2->cardnumlabel->setText(QString::number(player2->getCardsNum()));
-
-	QYXCQWindow->getUi().playBoard->setVisible(true);
-}
+//void GameCore::boardInit(QList<Player* >& players){
+//
+//	Player* player = players[0];
+//
+//	player->okbutton->setText(tr("OK"));
+//	player->okbutton->setEnabled(false);
+//	player->cancelbutton->setText(tr("Cancel"));
+//	player->bloodlabel->setText(QString::number(player->getBlood()));
+//	player->cardnumlabel->setText(QString::number(player->getCardsNum()));
+//
+//	Player* player2 = players[1];
+//
+//	player2->okbutton = QYXCQWindow->getUi().player2OkButton;
+//	player2->cancelbutton = QYXCQWindow->getUi().player2CancelButton;
+//	player2->bloodlabel = QYXCQWindow->getUi().player2BloodLabel;
+//	player2->cardnumlabel = QYXCQWindow->getUi().player2CardLabel;
+//	player2->m_cardcontainer = QYXCQWindow->getUi().player2CardContainer;
+//
+//	player2->okbutton->setText(tr("OK"));
+//	player2->okbutton->setEnabled(false);
+//	player2->cancelbutton->setText(tr("Cancel"));
+//	player2->bloodlabel->setText(QString::number(player2->getBlood()));
+//	player2->cardnumlabel->setText(QString::number(player2->getCardsNum()));
+//
+//	QYXCQWindow->getUi().playBoard->setVisible(true);
+//}
 void GameCore::generatePlayerBoard(QList<Player* >* players){
 
 	

@@ -6,5 +6,7 @@
 #include <QTranslator>
 #include <QtCore>
 #include <QtWidgets>
+#include <QDebug>
+
 
 #endif
