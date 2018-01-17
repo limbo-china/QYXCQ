@@ -54,6 +54,10 @@ public:
     QSpacerItem *verticalSpacer_4;
     QPushButton *player2OkButton;
     QPushButton *player2CancelButton;
+    QLabel *remainNumLabel;
+    QLabel *discardNumLabel;
+    QLabel *label;
+    QLabel *label_2;
     QMenuBar *menuBar;
     QStatusBar *statusBar;
 
@@ -67,7 +71,7 @@ public:
         playBoard = new QWidget(centralWidget);
         playBoard->setObjectName(QStringLiteral("playBoard"));
         playBoard->setEnabled(true);
-        playBoard->setGeometry(QRect(30, 50, 771, 601));
+        playBoard->setGeometry(QRect(30, 20, 791, 641));
         layoutWidget = new QWidget(playBoard);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
         layoutWidget->setGeometry(QRect(330, 40, 422, 194));
@@ -98,6 +102,7 @@ public:
 
         player1CardContainer = new QListWidget(layoutWidget);
         player1CardContainer->setObjectName(QStringLiteral("player1CardContainer"));
+        player1CardContainer->setSelectionMode(QAbstractItemView::MultiSelection);
 
         horizontalLayout->addWidget(player1CardContainer);
 
@@ -151,6 +156,7 @@ public:
 
         player2CardContainer = new QListWidget(layoutWidget1);
         player2CardContainer->setObjectName(QStringLiteral("player2CardContainer"));
+        player2CardContainer->setSelectionMode(QAbstractItemView::MultiSelection);
 
         horizontalLayout_2->addWidget(player2CardContainer);
 
@@ -174,6 +180,18 @@ public:
 
         horizontalLayout_2->addLayout(verticalLayout_4);
 
+        remainNumLabel = new QLabel(playBoard);
+        remainNumLabel->setObjectName(QStringLiteral("remainNumLabel"));
+        remainNumLabel->setGeometry(QRect(30, 30, 72, 15));
+        discardNumLabel = new QLabel(playBoard);
+        discardNumLabel->setObjectName(QStringLiteral("discardNumLabel"));
+        discardNumLabel->setGeometry(QRect(170, 30, 72, 15));
+        label = new QLabel(playBoard);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(30, 10, 72, 15));
+        label_2 = new QLabel(playBoard);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setGeometry(QRect(170, 10, 72, 15));
         QYXCQClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(QYXCQClass);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -199,6 +217,10 @@ public:
         player2BloodLabel->setText(QApplication::translate("QYXCQClass", "TextLabel", 0));
         player2OkButton->setText(QApplication::translate("QYXCQClass", "PushButton", 0));
         player2CancelButton->setText(QApplication::translate("QYXCQClass", "PushButton", 0));
+        remainNumLabel->setText(QApplication::translate("QYXCQClass", "TextLabel", 0));
+        discardNumLabel->setText(QApplication::translate("QYXCQClass", "TextLabel", 0));
+        label->setText(QApplication::translate("QYXCQClass", "\345\211\251\344\275\231", 0));
+        label_2->setText(QApplication::translate("QYXCQClass", "\344\270\242\345\274\203", 0));
     } // retranslateUi
 
 };

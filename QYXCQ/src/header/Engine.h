@@ -14,11 +14,13 @@ public:
 	~Engine();
 
 	CardPackage* getCardPack();
+	GameCore* gamecore;
+	void updateRemainDiscard();
 
 private:
 
 	CardPackage *cardpack;
-	GameCore* gamecore;
+	
 
 private slots:
 	

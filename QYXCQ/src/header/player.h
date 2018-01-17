@@ -11,7 +11,7 @@ class Player :public QObject{
 
 public:
 
-	Player(/*QString character*/);
+	Player(int n/*QString character*/);
 
 	//ui
 	QListWidget* m_cardcontainer;
@@ -22,12 +22,17 @@ public:
 	int getBlood(){ return m_blood; }
 	int getCardsNum() { return m_cards.length(); }
 	void getOneCard(Card*);
+	void playOutOneCard(int r);
 
 private:
 
 	//Genenal m_general;
 	QList<Card* > m_cards;
 	int m_blood;
+
+	private slots:
+	void itemSelectChange();
+	void on_okbutton_clicked();
 
 	
 

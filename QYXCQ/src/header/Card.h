@@ -23,20 +23,20 @@ public:
 	};*/
 
 	Card();
-	Card(QString suit, QString type, int p);
+	Card(QString suit, QString type, QString p);
 	//void setSuit(Suit s);
 	//void setColor(Color c);
 	//void setType(Type t);
 	QString getSuit();
 	QString getType();
 	QString getName();
-	int getPoint();
+	QString getPoint();
 
 private:
 
 	QString m_suit;
 	QString  m_type;
-	int m_point;
+	QString m_point;
 };
 
 //class CardInfo: public QObject{
@@ -62,7 +62,7 @@ public:
 		juedou, shoupenglei, wuxie, huadi, jiedao, wugu, wuzhong, xiuyang, fenghuo, wanjian, tannang, fudi
 	};*/
 
-	SkillCard(QString skill, QString sui, int p);
+	SkillCard(QString skill, QString sui, QString p);
 
 	//void setSkill(Skill s);
 	QString getSkill();
@@ -82,7 +82,7 @@ public:
 	/*enum Basic{
 		slash, parry, supplement
 	};*/
-	BasicCard(QString b, QString suit, int p);
+	BasicCard(QString b, QString suit, QString p);
 
 	//void setBasic(Basic b);
 	QString getBasic();
@@ -102,7 +102,7 @@ public:
 	/*enum Equip{
 		jingong, fangyu, yuchangjian, bolangchui, bawanggong, yuruyu, langyabang, panlonggun, luyeqiang, hufu, longlindao
 	};*/
-	EquipCard(QString e, QString suit, int p);
+	EquipCard(QString e, QString suit, QString p);
 
 	//void setEquip(Equip e);
 	QString getEquip();

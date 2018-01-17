@@ -22,6 +22,7 @@ private:
 	CardOverViewDialog* cardOverViewDialog;
 
 	QToolBar* gameToolbar;
+	QToolBar* helpToolbar;
 
 	QMenu* gameMenu;
 	QAction* startAction;

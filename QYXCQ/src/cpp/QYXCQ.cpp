@@ -15,14 +15,16 @@ QYXCQ::QYXCQ(QWidget *parent)
 	connect(startAction, SIGNAL(triggered()), this, SLOT(on_startAction_triggered()));
 	/*gameMenu = menuBar()->addMenu(tr("&Game"));
 	gameMenu->addAction(startAction);*/
-	gameToolbar = addToolBar(tr("&File"));
+	gameToolbar = addToolBar(tr("Game"));
 	gameToolbar->addAction(startAction);
 
 	
-	/*cardOverViewAction = new QAction(tr("Card OverView"),this);
+	cardOverViewAction = new QAction(tr("Card OverView"),this);
 	connect(cardOverViewAction, SIGNAL(triggered()), this, SLOT(on_cardOverViewAction_triggered()));
-	helpMenu = menuBar()->addMenu(tr("Help"));
+	/*helpMenu = menuBar()->addMenu(tr("Help"));
 	helpMenu->addAction(cardOverViewAction);*/
+	helpToolbar = addToolBar(tr("Help"));
+	helpToolbar->addAction(cardOverViewAction);
 
 	
 

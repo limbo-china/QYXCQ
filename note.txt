@@ -2,3 +2,11 @@
 
 <GameCore::generatePlayerBoard>
 在QMainWindow动态创建widget，若使centralwidget成为其父widget，会出现各种奇怪问题。widget可能不显示。
+
+
+2018-01-17
+vs qt调试时，选择release版本，debug版本调试可能出现各种问题。如控件不显示，Qt语言家无法使用等问题。
+
+<Card::getName()>
+在代码里添加待翻译的字符串后，要在项目里更新.ts文件生成新qm文件，否则可能找不到类，无法正确翻译。
+QCoreApplicaiton::translator()  和 tr()对此项目而言，效果是一样的，都能使用。

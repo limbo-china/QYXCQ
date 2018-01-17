@@ -1,5 +1,6 @@
 #include "gamecore.h"
 #include "QYXCQ.h"
+#include "Engine.h"
 #include <iostream>
 using namespace std;
 
@@ -8,8 +9,11 @@ GameCore::GameCore(int players){
 
 	CardPackage* cardpackage = new CardPackage();
 
-	foreach(Card* c, cardpackage->cards)
-		discardedcards << c;
+	/*foreach(Card* c, cardpackage->cards)
+		discardedcards << c;*/
+	for (int i = 0; i < cardpackage->cards.length()-95; i++){
+		discardedcards << cardpackage->cards[i];
+	}
 
 	playernum = players;
 
@@ -18,7 +22,7 @@ void GameCore::startGame(QString character){
 
 	for (int i = 0; i < playernum; i++)
 	{
-		Player* player = new Player(/*character*/);
+		Player* player = new Player(i+1/*character*/);
 		players << player;
 	}
 
@@ -50,13 +54,8 @@ void GameCore::boardInit(QList<Player* >& players){
 
 	Player* player = players[0];
 
-	player->okbutton = QYXCQWindow->getUi().player1OkButton;
-	player->cancelbutton = QYXCQWindow->getUi().player1CancelButton;
-	player->bloodlabel = QYXCQWindow->getUi().player1BloodLabel;
-	player->cardnumlabel = QYXCQWindow->getUi().player1CardLabel;
-	player->m_cardcontainer = QYXCQWindow->getUi().player1CardContainer;
-
 	player->okbutton->setText(tr("OK"));
+	player->okbutton->setEnabled(false);
 	player->cancelbutton->setText(tr("Cancel"));
 	player->bloodlabel->setText(QString::number(player->getBlood()));
 	player->cardnumlabel->setText(QString::number(player->getCardsNum()));
@@ -70,6 +69,7 @@ void GameCore::boardInit(QList<Player* >& players){
 	player2->m_cardcontainer = QYXCQWindow->getUi().player2CardContainer;
 
 	player2->okbutton->setText(tr("OK"));
+	player2->okbutton->setEnabled(false);
 	player2->cancelbutton->setText(tr("Cancel"));
 	player2->bloodlabel->setText(QString::number(player2->getBlood()));
 	player2->cardnumlabel->setText(QString::number(player2->getCardsNum()));
@@ -116,7 +116,7 @@ void GameCore::generatePlayerBoard(QList<Player* >* players){
 	QSpacerItem* verticalSpacer2 = new QSpacerItem(17, 88, QSizePolicy::Minimum, QSizePolicy::Expanding);
 	verticalLayout3->addItem(verticalSpacer2);
 	player2->m_cardcontainer = new QListWidget(w2);
-	player2->okbutton = new QPushButton(w2);
+	player2->okbutton = new  QPushButton(w2);
 	player2->cancelbutton = new QPushButton(w2);
 	player2->bloodlabel = new QLabel(w2);
 	player2->cardnumlabel = new QLabel(w2);
@@ -146,8 +146,9 @@ Card* GameCore::getTopCardFromRemain(){
 	if (remaincards.isEmpty())
 		shuffleCards();
 	Card* c = remaincards.first();
-	discardedcards << c;
 	remaincards.pop_front();
+
+	QYXCQEngine->updateRemainDiscard();
 
 	return c;
 }

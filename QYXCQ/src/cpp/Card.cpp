@@ -1,21 +1,21 @@
 #include "Card.h"
 
 Card::Card(){}
-Card::Card(QString suit, QString type, int p)
+Card::Card(QString suit, QString type, QString p)
 : m_suit(suit), m_type(type), m_point(p)
 {
 }
 
 QString Card::getSuit(){ return m_suit; }
 QString Card::getType(){ return m_type; }
-int Card::getPoint(){ return m_point; }
+QString Card::getPoint(){ return m_point; }
 
 QString Card::getName(){
-	if (m_type == tr("basic"))
+	if (m_type == QCoreApplication::translate("Card", "basic")/*tr("basic")*/)
 		return static_cast<BasicCard*>(this)->getBasic();
-	else if (m_type == tr("skill"))
+	else if (m_type == QCoreApplication::translate("Card", "skill")/*tr("skill")*/)
 		return static_cast<SkillCard*>(this)->getSkill();
-	else if (m_type == tr("equip"))
+	else if (m_type == QCoreApplication::translate("Card", "equip")/*tr("equip")*/)
 		return static_cast<EquipCard*>(this)->getEquip();
 	else
 		return "";
@@ -112,19 +112,19 @@ QString Card::getName(){
 //	return cards[getTypeByCard(c)];
 //}
 
-SkillCard::SkillCard(QString skill, QString suit, int p) : Card(suit, tr("skill"), p), m_skill(skill)
+SkillCard::SkillCard(QString skill, QString suit, QString p) : Card(suit, tr("skill"), p), m_skill(skill)
 {
 }
 
 QString SkillCard::getSkill(){ return m_skill; }
 
-BasicCard::BasicCard(QString basic, QString suit, int p) : Card(suit, tr("basic"), p), m_basic(basic)
+BasicCard::BasicCard(QString basic, QString suit, QString p) : Card(suit, tr("basic"), p), m_basic(basic)
 {
 }
 
 QString BasicCard::getBasic(){ return m_basic; }
 
-EquipCard::EquipCard(QString equip, QString suit, int p) : Card(suit, tr("equip"), p), m_equip(equip)
+EquipCard::EquipCard(QString equip, QString suit, QString p) : Card(suit, tr("equip"), p), m_equip(equip)
 {
 }
 

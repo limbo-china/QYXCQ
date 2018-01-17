@@ -18,15 +18,17 @@ public:
 	void shuffleCards();
 	void dealCards();
 
+	QList<Card* > remaincards;
+	QList<Card* > discardedcards;
+	Card* getTopCardFromRemain();
+
 private:
 
-	Card* getTopCardFromRemain();
 	void shuffleDiscarded(QList<Card* >&);
 
 	int playernum;
 	QList<Player* > players;
-	QList<Card* > remaincards;
-	QList<Card* > discardedcards;
+	
 
 
 };
