@@ -28,8 +28,8 @@ void GameCore::startGame(QString character){
 
 	//boardInit(players);
 
-	shuffleCards();
-	dealCards();
+	//shuffleCards();
+	//dealCards();
 	//generatePlayerBoard(&players);  //没调好，先静态生成
 
 }
